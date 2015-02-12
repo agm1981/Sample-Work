@@ -1,5 +1,5 @@
 # Sample-Work
-This sample work includes the followng tasks
+This sample work includes the following tasks
 http://www.thumbtack.com/challenges/simple-database
 
  Simple Database Challenge
@@ -19,4 +19,6 @@ For this kata, we’re going to write a program to solve a simple problem, and w
   tail + or => tailor;
   we + aver => weaver;
   
-  Work was done in a factory pattern, as the test was asking about extensibility
+  Work was done in a factory pattern, as the test was asking about extensibility.
+  
+  Added a simple GetEnumerable Overload that during a test i failed to complete... Shame on me. Next day. five minutes to complete
