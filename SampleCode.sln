@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata08", "Kata08\Kata08.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dataBaseinMemory", "dataBaseinMemory\dataBaseinMemory.csproj", "{8D2D1A4F-823A-41EE-9871-A8002C6A7391}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IteratorOverload", "IteratorOverload\IteratorOverload.csproj", "{6BFE9FE3-522F-4F35-AC14-A774CDE87ADC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8D2D1A4F-823A-41EE-9871-A8002C6A7391}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2D1A4F-823A-41EE-9871-A8002C6A7391}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2D1A4F-823A-41EE-9871-A8002C6A7391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BFE9FE3-522F-4F35-AC14-A774CDE87ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFE9FE3-522F-4F35-AC14-A774CDE87ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFE9FE3-522F-4F35-AC14-A774CDE87ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFE9FE3-522F-4F35-AC14-A774CDE87ADC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
