@@ -9,10 +9,17 @@ namespace Kata02
 {
     class Program
     {
-        public delegate int MyDelegate(int t, int[] arr);
+        /// <summary>
+        /// Using Delegates just for fun.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public delegate int CustomDelegate(int t, int[] arr);
+
         static void Main(string[] args)
         {
-            MyDelegate chop = FindInArray;
+            CustomDelegate findInArrayDelegated = FindInArray;
 
             int[] array1 = new int[0];
             int[] array2 = { 1 };
@@ -20,29 +27,29 @@ namespace Kata02
             int[] array4 = { 1, 3, 5, 7 };
             int[] array5 = new int[0];
 
-            assert_equal(-1, chop(3, array1));
-            assert_equal(-1, chop(3, array2));
-            assert_equal(0, chop(1, array2));
-            assert_equal(0, chop(1, array3));
-            assert_equal(1, chop(3, array3));
-            assert_equal(2, chop(5, array3));
-            assert_equal(-1, chop(0, array3));
-            assert_equal(-1, chop(2, array3));
-            assert_equal(-1, chop(4, array3));
-            assert_equal(-1, chop(6, array3));
-            assert_equal(0, chop(1, array4));
-            assert_equal(1, chop(3, array4));
-            assert_equal(2, chop(5, array4));
-            assert_equal(3, chop(7, array4));
-            assert_equal(-1, chop(0, array4));
-            assert_equal(-1, chop(2, array4));
-            assert_equal(-1, chop(4, array4));
-            assert_equal(-1, chop(6, array4));
-            assert_equal(3, chop(7, array4));
+            AreEqual(-1, findInArrayDelegated(3, array1));
+            AreEqual(-1, findInArrayDelegated(3, array2));
+            AreEqual(0, findInArrayDelegated(1, array2));
+            AreEqual(0, findInArrayDelegated(1, array3));
+            AreEqual(1, findInArrayDelegated(3, array3));
+            AreEqual(2, findInArrayDelegated(5, array3));
+            AreEqual(-1, findInArrayDelegated(0, array3));
+            AreEqual(-1, findInArrayDelegated(2, array3));
+            AreEqual(-1, findInArrayDelegated(4, array3));
+            AreEqual(-1, findInArrayDelegated(6, array3));
+            AreEqual(0, findInArrayDelegated(1, array4));
+            AreEqual(1, findInArrayDelegated(3, array4));
+            AreEqual(2, findInArrayDelegated(5, array4));
+            AreEqual(3, findInArrayDelegated(7, array4));
+            AreEqual(-1, findInArrayDelegated(0, array4));
+            AreEqual(-1, findInArrayDelegated(2, array4));
+            AreEqual(-1, findInArrayDelegated(4, array4));
+            AreEqual(-1, findInArrayDelegated(6, array4));
+            AreEqual(3, findInArrayDelegated(7, array4));
             Console.ReadLine();
         }
 
-        private static void assert_equal(int value, int target)
+        private static void AreEqual(int value, int target)
         {
             if (value != target)
                 throw new Exception();
