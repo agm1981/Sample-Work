@@ -21,6 +21,11 @@ namespace Kata02
         {
             CustomDelegate findInArrayDelegated = FindInArray;
 
+            findInArrayDelegated += FindInArray;
+            findInArrayDelegated += FindInArray;
+            findInArrayDelegated += FindInArray;
+
+
             int[] array1 = new int[0];
             int[] array2 = { 1 };
             int[] array3 = { 1, 3, 5 };
@@ -28,24 +33,24 @@ namespace Kata02
             int[] array5 = new int[0];
 
             AreEqual(-1, findInArrayDelegated(3, array1));
-            AreEqual(-1, findInArrayDelegated(3, array2));
-            AreEqual(0, findInArrayDelegated(1, array2));
-            AreEqual(0, findInArrayDelegated(1, array3));
-            AreEqual(1, findInArrayDelegated(3, array3));
-            AreEqual(2, findInArrayDelegated(5, array3));
-            AreEqual(-1, findInArrayDelegated(0, array3));
-            AreEqual(-1, findInArrayDelegated(2, array3));
-            AreEqual(-1, findInArrayDelegated(4, array3));
-            AreEqual(-1, findInArrayDelegated(6, array3));
-            AreEqual(0, findInArrayDelegated(1, array4));
-            AreEqual(1, findInArrayDelegated(3, array4));
-            AreEqual(2, findInArrayDelegated(5, array4));
-            AreEqual(3, findInArrayDelegated(7, array4));
-            AreEqual(-1, findInArrayDelegated(0, array4));
-            AreEqual(-1, findInArrayDelegated(2, array4));
-            AreEqual(-1, findInArrayDelegated(4, array4));
-            AreEqual(-1, findInArrayDelegated(6, array4));
-            AreEqual(3, findInArrayDelegated(7, array4));
+            //AreEqual(-1, findInArrayDelegated(3, array2));
+            //AreEqual(0, findInArrayDelegated(1, array2));
+            //AreEqual(0, findInArrayDelegated(1, array3));
+            //AreEqual(1, findInArrayDelegated(3, array3));
+            //AreEqual(2, findInArrayDelegated(5, array3));
+            //AreEqual(-1, findInArrayDelegated(0, array3));
+            //AreEqual(-1, findInArrayDelegated(2, array3));
+            //AreEqual(-1, findInArrayDelegated(4, array3));
+            //AreEqual(-1, findInArrayDelegated(6, array3));
+            //AreEqual(0, findInArrayDelegated(1, array4));
+            //AreEqual(1, findInArrayDelegated(3, array4));
+            //AreEqual(2, findInArrayDelegated(5, array4));
+            //AreEqual(3, findInArrayDelegated(7, array4));
+            //AreEqual(-1, findInArrayDelegated(0, array4));
+            //AreEqual(-1, findInArrayDelegated(2, array4));
+            //AreEqual(-1, findInArrayDelegated(4, array4));
+            //AreEqual(-1, findInArrayDelegated(6, array4));
+            //AreEqual(3, findInArrayDelegated(7, array4));
             Console.ReadLine();
         }
 
@@ -72,6 +77,7 @@ namespace Kata02
 
 
         }
+
 
 
     }
