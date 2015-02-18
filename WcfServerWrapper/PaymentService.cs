@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -58,6 +59,15 @@ namespace WcfServerWrapper
                 return new WrapperObject("0");
             }
             return new WrapperObject((value.Name.GetHashCode() * value.Value.GetHashCode()).ToString(CultureInfo.InvariantCulture));
+        }
+
+        public List<WrapperObject> GetDropDown()
+        {
+            List<WrapperObject> values = new List<WrapperObject>();
+            values.Add(new WrapperObject("America"));
+            values.Add(new WrapperObject("Africa"));
+            values.Add(new WrapperObject("Europa"));
+            return values;
         }
     }
 

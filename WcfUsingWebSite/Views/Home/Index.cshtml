@@ -1,0 +1,84 @@
+﻿@model WcfContracts.ComplexJsonObject
+<script src="~/Scripts/jquery-2.1.3.min.js"></script>
+<script>
+    function SubmitPostToServer(e, args) {
+        //here we do the jquery post call
+
+    }
+    function FillDropDown(e, args) {
+        
+        var path = "http://localhost:3698/api/GetDropDown";
+
+        $.ajax(
+        {
+            url: path,
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data);
+                $("#Continents").empty();
+                for (var i = 0; i < data.length; i++) {
+                    $("#Continents").append("<option>" + data[i] + "</option>");
+                }
+            },
+            error: function (data) {
+                debugger;
+                console.log(data);
+                alert("Error in Getting Continents");
+            },
+        });
+
+        $("#Continents").prop("disabled", false);
+    }
+    //here we bind the first downdown to document ready
+</script>
+<script>
+    $(document).ready(function () {
+        $("#Continents").prop("disabled", true);
+        FillDropDown();
+    });
+</script>
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">Examples of filling out dropdowns and website elements using Jquery with WCF on the backend</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Document Ready</h2>
+        <p>Dropdown filled with a WCF ajax call on Document Ready</p>
+        <select id="Continents"></select>
+    </div>
+    <div class="col-md-4">
+        <h2>On Demand</h2>
+        <p>
+            Dropdown filled with a WCF ajax call on Demand Ready
+        </p>
+
+
+
+        <a class="btn btn-info"> Fill Data</a>
+    </div>
+    <div class="col-md-4">
+        <h2>Posting</h2>
+        <p>Posting from the website to the server</p>
+
+        <p>
+            @Html.TextBoxFor(m => m.Name, new
+                                          {
+                                              @style = "color:white",
+                                              @placeholder = "Enter Name"
+                                          })
+            <br />
+
+            @Html.TextBoxFor(m => m.Value, new
+                                            {
+                                                @style = "color:white",
+                                                @placeholder = "Enter Value"
+                                            })
+
+
+        </p>
+        <a class="btn btn-info" onclick="SubmitPostToServer"> Submit Data</a>
+
+    </div>
+
+</div>

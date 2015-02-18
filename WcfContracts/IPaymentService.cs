@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using Newtonsoft.Json;
 
 namespace WcfContracts
 {
@@ -35,43 +33,10 @@ namespace WcfContracts
             ResponseFormat = WebMessageFormat.Json)]
         WrapperObject PutInformation(ComplexJsonObject value);
 
-    }
 
-    [DataContract]
-    public class WrapperObject
-    {
-        [DataMember]
-        public string Value
-        {
-
-            get;
-            set;
-        }
-        public WrapperObject(string value)
-        {
-            Value = value;
-        }
+        [OperationContract]
+        [WebGet(UriTemplate = "GetDropDown")]
+        List<WrapperObject> GetDropDown();
 
     }
-    public class ComplexJsonObject
-    {
-        [JsonProperty]
-        public string Name
-        {
-            get;
-            set;
-        }
-        [JsonProperty]
-        public string Value
-        {
-            get;
-            set;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("{0} - {1}", Name, Value);
-        }
-    }
-    
 }
