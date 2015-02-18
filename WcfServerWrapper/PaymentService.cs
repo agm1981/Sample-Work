@@ -1,9 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using System.Globalization;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Results;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using WcfContracts;
 
 namespace WcfServerWrapper
@@ -33,5 +37,29 @@ namespace WcfServerWrapper
             //create a factory and apply payment
             return 2;
         }
+
+        public ComplexJsonObject GetInformation(string value)
+        {
+            
+
+            return new ComplexJsonObject
+                   {
+                       Name = value,
+                       Value = value
+
+                   };
+
+        }
+
+        public WrapperObject PutInformation(ComplexJsonObject value)
+        {
+            if (value == null)
+            {
+                return new WrapperObject("0");
+            }
+            return new WrapperObject((value.Name.GetHashCode() * value.Value.GetHashCode()).ToString(CultureInfo.InvariantCulture));
+        }
     }
+
+    
 }

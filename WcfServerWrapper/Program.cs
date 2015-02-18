@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace WcfServerWrapper
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof (PaymentService)))
+            using (WebServiceHost host = new WebServiceHost(typeof (PaymentService)))
             {
                 host.Open();
                 Console.ReadLine();
