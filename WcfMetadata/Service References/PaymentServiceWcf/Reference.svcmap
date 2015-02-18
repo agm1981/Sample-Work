@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:3698/po" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:3698/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PaymentService.wsdl" MetadataType="Wsdl" ID="e2bbe27f-c1df-4edf-b6a3-005bb1b739f9" SourceId="1" SourceUrl="http://localhost:3698/po?wsdl" />
-    <MetadataFile FileName="po.xsd" MetadataType="Schema" ID="737b6175-135f-4ef3-8aba-1033789ca71a" SourceId="1" SourceUrl="http://localhost:3698/po?xsd=xsd0" />
-    <MetadataFile FileName="po1.xsd" MetadataType="Schema" ID="1dc6416d-c282-4aff-8103-18cac7eba287" SourceId="1" SourceUrl="http://localhost:3698/po?xsd=xsd1" />
-    <MetadataFile FileName="po.disco" MetadataType="Disco" ID="a9fe6dc4-c129-4e94-983c-a86b96bdf426" SourceId="1" SourceUrl="http://localhost:3698/po?disco" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="58be5b37-52ab-4305-bb26-1e30f3d1e1b1" SourceId="1" SourceUrl="http://localhost:3698/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="499ccef1-f70e-4ed2-bb62-37a97ffbdf98" SourceId="1" SourceUrl="http://localhost:3698/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="7f114ad7-2271-4e25-943c-373a50ef009a" SourceId="1" SourceUrl="http://localhost:3698/mex" />
+    <MetadataFile FileName="WcfContracts1.xsd" MetadataType="Schema" ID="e88fb626-4102-4aa9-bdb8-57ce42ca9d55" SourceId="1" SourceUrl="http://localhost:3698/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

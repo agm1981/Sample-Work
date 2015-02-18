@@ -56,12 +56,21 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PaymentServiceWcf\PaymentService.wsdl" />
-    <None Include="Service References\PaymentServiceWcf\po.xsd">
+    <None Include="Service References\PaymentServiceWcf\service1.wsdl" />
+    <None Include="Service References\PaymentServiceWcf\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PaymentServiceWcf\po1.xsd">
+    <None Include="Service References\PaymentServiceWcf\service21.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentServiceWcf\WcfContracts1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentServiceWcf\WcfMetadata.PaymentServiceWcf.ComplexJsonObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentServiceWcf\WcfMetadata.PaymentServiceWcf.WrapperObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -69,9 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\PaymentServiceWcf\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PaymentServiceWcf\po.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\PaymentServiceWcf\configuration91.svcinfo" />
