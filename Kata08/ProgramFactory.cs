@@ -13,7 +13,7 @@ namespace Kata08
     /// If exists on the dictionay word C where word A concat B = C
     /// then display A + B => C
     /// </summary>
-    class ProgramFactory
+    public static class ProgramFactory
     {
         private static List<string> dictionary;
 
@@ -23,10 +23,10 @@ namespace Kata08
 
 
             FillWords(out dictionary);
-            CollectionFactory factory = new CollectionFactory();
-            ICollectionFinder coll = factory.FactoryMethod(dictionary);
+            CollectionFactory<string> factory = new CollectionFactory<string>();
+            ICollectionFinder<string> coll = factory.FactoryMethod(dictionary);
 
-            ICollection splittedCollection = coll.GetSplittedCollection(dictionary, 6);
+            ICollection splittedCollection = coll.GetSplittedCollection(dictionary, WordBelongs);
 
             foreach (string elements in from object value in splittedCollection select value as string)
             {
@@ -36,7 +36,7 @@ namespace Kata08
         }
 
 
-        private static void FillWords(out List<string> values)
+        public static void FillWords(out List<string> values)
         {
             values = new List<string>();
             using (StreamReader sr = new StreamReader("dictio.txt"))
@@ -53,7 +53,20 @@ namespace Kata08
             }
         }
 
-
+        public static bool WordBelongs(string word, HashSet<string> collectionToSearchOn)
+        {
+            for (int i = 1; i < word.Length; i++)
+            {
+                string a = word.Substring(0, i);
+                string b = word.Substring(i, word.Length - i);
+                if (collectionToSearchOn.Contains(a) &&
+                    collectionToSearchOn.Contains(b))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
    
     }
 }

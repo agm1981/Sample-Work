@@ -6,52 +6,65 @@ using System.Linq;
 namespace Kata08
 {
 
-    class StringCollectionFinder : ICollectionFinder
+    public class StringCollectionFinder<T> : ICollectionFinder<T>
     {
-        
-        public ICollection GetSplittedCollection(ICollection colToSplit, int maxNumberOfChars)
+
+        public ICollection GetSplittedCollection(IEnumerable colToSplit, DoesWordBelongInOutput<T> comparerFunction)
         {
+           
+            //if (colToSplit.GetType() != typeof(IEnumerable<string>))// &&
+            ////    colToSplit.GetType() != typeof(List<string>) 
+            ////    )
+            //{
+            //    throw new InvalidOperationException("This type can not process this collection");
+            //}
 
-            if (colToSplit.GetType() != typeof(IEnumerable<string>) &&
-                colToSplit.GetType() != typeof(List<string>) 
-                )
-            {
-                throw new InvalidOperationException("This class can not process this collection");
-            }
-            
-            List<string> wordsOfSix = new List<string>();
-            List<string> wordsLessThanSix = new List<string>();
-            List<string> finalList = new List<string>();
+            HashSet<T> wordsOfSix = new HashSet<T>();
 
-            List<string> allWords = colToSplit as List<String>;
+            HashSet<T> wordsLessThanSix = new HashSet<T>();
+            List<T> finalList = new List<T>();
+            //List<string> wordsOfSixOrUnder = new List<string>();
+            List<T> allWords = colToSplit as List<T>;
             if (allWords == null ||
                 !allWords.Any())
             {
-                return new List<string>();
+                return new List<T>();
             }
+            //foreach (T word in allWords.Where(x => x.Length == maxNumberOfChars))
+            //{
+            //    wordsOfSix.Add(word);
+            //}
 
-            wordsOfSix.AddRange(allWords.Where(x => x.Length == maxNumberOfChars));
-            wordsLessThanSix.AddRange(allWords.Where(x => x.Length < maxNumberOfChars));
-            foreach (string fullword in wordsOfSix)
+            //foreach (string word in allWords.Where(x => x.Length < maxNumberOfChars))
+            //{
+            //    wordsLessThanSix.Add(word);
+            //}
+            //wordsLessThanSix. AddRange(allWords.Where(x => x.Length < maxNumberOfChars)).;
+
+            //foreach ( string word in allWords)//.Where(x=>x.Length <= maxNumberOfChars ))
+            //{
+            //    if (word.Length == maxNumberOfChars)
+            //    {
+            //        wordsOfSix.Add(word);
+            //    }
+            //    if (word.Length < maxNumberOfChars)
+            //    {
+            //        wordsLessThanSix.Add(word);
+            //    }
+            //}
+
+
+            foreach (T fullword in wordsOfSix)
             {
-                for (int i = 1; i < maxNumberOfChars; i++)
+                if (comparerFunction(fullword, wordsLessThanSix))
                 {
-                    string a = fullword.Substring(0, i);
-                    string b = fullword.Substring(i, maxNumberOfChars - i);
-                    if (wordsLessThanSix.Any(x => x == a) &&
-                        wordsLessThanSix.Any(x => x == b))
-                    {
-                        //Console.WriteLine("{0} + {1} => {2}", a, b, fullword);
-                        finalList.Add(fullword);
-                        i = 7;// exit the loop
-                    }
+                    finalList.Add(fullword);
                 }
+                
             }
             return finalList;
         }
 
-
         
-
     }
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kata08
 {
-    interface ICollectionFinder
+    public delegate bool DoesWordBelongInOutput<T>(T element, HashSet<T> collectionToSearchOn);
+
+    public interface ICollectionFinder<T>
     {
-        ICollection GetSplittedCollection(ICollection collectionToWorkWith, int maxNumberOfChars);
+        ICollection GetSplittedCollection(IEnumerable collectionToWorkWith, DoesWordBelongInOutput<T> comparer);
     }
 }

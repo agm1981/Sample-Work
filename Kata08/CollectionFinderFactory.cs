@@ -7,22 +7,16 @@ using System.Threading.Tasks;
 
 namespace Kata08
 {
-    abstract class CollectionFinderAbstractFactory
+    public abstract class CollectionFinderAbstractFactory<T>
     {
-        public abstract ICollectionFinder FactoryMethod(ICollection collection);
+        public abstract ICollectionFinder<T> FactoryMethod(ICollection collection);
     }
 
-    class CollectionFactory : CollectionFinderAbstractFactory
+    public class CollectionFactory<T> : CollectionFinderAbstractFactory<T>
     {
-        public override ICollectionFinder FactoryMethod(ICollection collection)
+        public override ICollectionFinder<T> FactoryMethod(ICollection collection)
         {
-            if (collection.GetType() == typeof (IEnumerable<string>) ||
-                collection.GetType() == typeof (List<string>))
-            {
-                return new StringCollectionFinder();
-            }
-            return null;
-            
+            return new StringCollectionFinder<T>();
         }
     }
 }
