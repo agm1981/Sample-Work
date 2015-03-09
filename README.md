@@ -1,4 +1,4 @@
-# Sample-Work
+﻿# Sample-Work
 This sample work includes the following tasks
 http://www.thumbtack.com/challenges/simple-database
 
@@ -22,3 +22,10 @@ For this kata, we’re going to write a program to solve a simple problem, and w
   Work was done in a factory pattern, as the test was asking about extensibility.
   
   Added a simple GetEnumerable Overload that during a test i failed to complete... Shame on me. Next day. five minutes to complete
+
+
+
+Second Solution EnterpriseSOlution
+
+Create a Custom Memberhip System that uses 3 security Questions, and password is stored in plain text on the db. Make it so the humber of questios can be configured by the user.
+Use Code first as much as posible.
